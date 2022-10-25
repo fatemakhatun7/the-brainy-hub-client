@@ -1,11 +1,10 @@
-import React from 'react';
+import { createBrowserRouter } from "react-router-dom";
+import Home from "../../Pages/Home/Home";
 
-const Routes = () => {
-    return (
-        <div>
-            <h2>ekhrfshf</h2>
-        </div>
-    );
-};
-
-export default Routes;
+export const routes = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home></Home>,
+        loader: () => fetch('https://the-brainy-hub-server.vercel.app/')
+    }
+])
