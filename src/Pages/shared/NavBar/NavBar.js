@@ -22,21 +22,10 @@ const NavBar = () => {
                 <li><Link to='/'>Courses</Link></li>
                 <li>
                 <div className='d-flex'>
-                    <Link to="/profile">
-                        {user?.photoURL ?
-                        <div className='avatar'>
-                            <div className="w-10 rounded-full">
-                                <img src={user?.photoURL}/>
-                            </div>
-                        </div>
-                            : <FaUser></FaUser>
-                        }
-                    </Link>
                     <div>
                         {
                             user?.uid ?
                                 <>
-                                    <span>{user?.displayName}</span>
                                     <div className="btn-group">
                                         <button className="btn btn-active m-2" onClick={handleLogOut}>Log out</button>
                                     </div>
@@ -44,10 +33,20 @@ const NavBar = () => {
                                 :
                                 <>
                                     <Link to='/login'>Login</Link>
-                                    <Link to='/register'>Register</Link>
+                                    <Link className='m-2' to='/register'>Register</Link>
                                 </>
                         }
                     </div>
+                    <Link to="/profile">
+                        {user?.photoURL ?
+                        <div className="avatar tooltip tooltip-accent" data-tip={user.displayName}>
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL}/>
+                            </div>
+                        </div>
+                            : <FaUser></FaUser>
+                        }
+                    </Link>
                 </div>
                 </li>
                 </ul>
