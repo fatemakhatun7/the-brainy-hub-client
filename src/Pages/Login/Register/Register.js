@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Register = () => {
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -49,6 +53,20 @@ const Register = () => {
         .catch(error => console.error(error));
     }
 
+    const handleGoogleSignin = () => {
+        signInWithGithub().then(result => {
+          console.log(result.user)
+          navigate(from, { replace: true })
+        })
+      }
+
+    const handleGitHubSignin = () => {
+        signInWithGoogle().then(result => {
+          console.log(result.user)
+          navigate(from, { replace: true })
+        })
+      }
+
 
     return (
         <div>
@@ -91,7 +109,8 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </Form>
-                        {/* <button onClick={handleGoogleSignIn} className="btn btn-active btn-accent">Sign in with Google</button> */}
+                        <button onClick={handleGoogleSignin} className="btn btn-active btn-accent">Sign in with Google</button>
+                        <button onClick={handleGitHubSignin} className="btn btn-active btn-accent my-2">Sign in with GitHub</button>
                     </div>
                 </div>
             </div>

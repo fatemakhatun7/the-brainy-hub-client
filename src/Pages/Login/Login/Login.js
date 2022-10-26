@@ -6,7 +6,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -40,6 +40,20 @@ const Login = () => {
             })
     }
 
+    const handleGoogleSignin = () => {
+        signInWithGithub().then(result => {
+          console.log(result.user)
+          navigate(from, { replace: true })
+        })
+      }
+
+    const handleGitHubSignin = () => {
+        signInWithGoogle().then(result => {
+          console.log(result.user)
+          navigate(from, { replace: true })
+        })
+      }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -69,6 +83,9 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </Form>
+                        
+                        <button onClick={handleGoogleSignin} className="btn btn-active btn-accent">Sign in with Google</button>
+                        <button onClick={handleGitHubSignin} className="btn btn-active btn-accent my-2">Sign in with GitHub</button>
                     </div>
                 </div>
             </div>
