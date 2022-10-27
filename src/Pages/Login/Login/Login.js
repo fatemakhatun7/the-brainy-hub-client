@@ -78,7 +78,7 @@ const Login = () => {
                                     <Link href="#" className="label-text-alt link link-hover">Forget password?</Link>
                                 </label>
                             </div>
-                            <div>{error}</div>
+                            <div className='text-red-600 font-bold'>{error}</div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>

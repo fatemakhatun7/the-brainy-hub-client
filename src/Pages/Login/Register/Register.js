@@ -100,11 +100,11 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
-                                <label className="label">
-                                    <Link to='/login' className="label-text-alt link link-hover">Already have an account? please Log in</Link>
-                                </label>
+                                <div className='m-3'>
+                                    <p>Already have an account? Please <Link to='../login' className='text-red-900 font-bold text-xl'>Log In</Link></p>
+                                </div>
                             </div>
-                            <div>{error}</div>
+                            <div className='text-red-600 font-bold'>{error}</div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>

@@ -1,20 +1,18 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import HomeCarousel from '../Home/HomeCarousel';
+import HomeCard from './HomeCard';
 
 const Home = () => {
     const allCategories = useLoaderData();
     return (
         <div>
-            <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-                <div className="carousel-item">
-                    {
-                        allCategories.map(pictures=> <HomeCarousel
-                        key={pictures.id}
-                        pictures={pictures}
-                        ></HomeCarousel>)
-                    }
-                </div> 
+            <div className='m-5'>
+                {
+                    allCategories.map(category => <HomeCard 
+                        key={category.id} 
+                        category={category}
+                        ></HomeCard>)
+                }
             </div>
         </div>
     );
