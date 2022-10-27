@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Blogs from "../../Pages/Blogs/Blogs";
 import Checkout from "../../Pages/courses/Checkout";
 import Courses from "../../Pages/courses/Courses";
 import CoursesDetails from "../../Pages/courses/CoursesDetails";
 import Error from "../../Pages/Error/Error";
+import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
-import Blogs from "../../Pages/Blogs";
-import FAQ from "../../Pages/FAQ";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Profile from "../../Pages/others/Profile/Profile";

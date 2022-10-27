@@ -7,7 +7,7 @@ const CourseCard = ({course}) => {
     // console.log(course);
 
     const handleDownload = ()=> {
-        toast.success("You have successfully download the file.")
+        toast.success("You have successfully downloaded the file.")
     }
 
     return (
