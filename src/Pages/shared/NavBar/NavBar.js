@@ -49,6 +49,14 @@ const NavBar = () => {
                     </Link>
                 </div>
                 </li>
+                <li>
+                <div className="form-control">
+                    <label className="label cursor-pointer">
+                        <span className="label-text mx-2">Dark Mood</span> 
+                        <input type="checkbox" className="toggle"/>
+                    </label>
+                </div>
+                </li>
                 </ul>
             </div>
         </div>

@@ -86,6 +86,9 @@ const Login = () => {
                         
                         <button onClick={handleGoogleSignin} className="btn btn-active btn-accent">Sign in with Google</button>
                         <button onClick={handleGitHubSignin} className="btn btn-active btn-accent my-2">Sign in with GitHub</button>
+                        <div className='m-3'>
+                            <p>Are you new in this website? please <Link to='../Register' className='text-red-900 font-bold text-xl'>Register</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>
