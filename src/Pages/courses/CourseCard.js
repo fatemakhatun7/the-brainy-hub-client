@@ -11,8 +11,8 @@ const CourseCard = ({course}) => {
     }
 
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-5">
-            <figure><img className='h-60 w-full' src={course.image} alt="" /></figure>
+        <div className="card card-compact w-80 bg-base-100 shadow-xl m-5">
+            <figure><img className='h-48 w-full' src={course.image} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{course.title}</h2>
                 <p>{course.description}</p>

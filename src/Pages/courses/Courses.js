@@ -7,7 +7,7 @@ const Courses = () => {
     const courses = useLoaderData();
     return (
         <div className='flex'>
-            <div className='m-3 rounded bg-orange-100'>
+            <div className='m-3 lg:block md:block hidden rounded bg-orange-100'>
                 {
                     courses.map(course => <CourseSidebar
                     key={course}

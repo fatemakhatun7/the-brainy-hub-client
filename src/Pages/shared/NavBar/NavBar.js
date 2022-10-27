@@ -42,10 +42,10 @@ const NavBar = () => {
                             }
                         </div>
                         <Link to="/profile">
-                            {user?.photoURL ?
+                            {user?.uid ?
                             <div className="avatar tooltip tooltip-accent" data-tip={user.displayName}>
                                 <div className="w-10 rounded-full">
-                                    <img src={user?.photoURL}/>
+                                    <img src={user?.photoURL} alt=""/>
                                 </div>
                             </div>
                                 : <FaUser></FaUser>

@@ -19,7 +19,7 @@ const Checkout = () => {
                         <p className='font-bold p-3 text-white'>{checkout.money}</p>
                     </div>
                     <div className="card-actions">
-                        <Link to='/' onClick={handleCheckout} className="btn btn-primary">Checkout</Link>
+                        <Link to='/' onClick={handleCheckout} className="btn btn-primary">Payment</Link>
                     </div>
                 </div>
             </div>
