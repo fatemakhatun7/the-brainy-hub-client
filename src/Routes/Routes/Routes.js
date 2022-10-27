@@ -5,6 +5,8 @@ import Courses from "../../Pages/courses/Courses";
 import CoursesDetails from "../../Pages/courses/CoursesDetails";
 import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home";
+import Blogs from "../../Pages/Blogs";
+import FAQ from "../../Pages/FAQ";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Profile from "../../Pages/others/Profile/Profile";
@@ -32,6 +34,14 @@ export const routes = createBrowserRouter([
             {
                 path:'/profile',
                 element: <Profile></Profile>
+            },
+            {
+                path:'/blogs',
+                element: <Blogs></Blogs>
+            },
+            {
+                path:'/faq',
+                element: <FAQ></FAQ>
             },
             {
                 path:'/courses',

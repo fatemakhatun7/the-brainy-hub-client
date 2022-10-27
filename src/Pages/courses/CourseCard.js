@@ -1,8 +1,15 @@
 import React from 'react';
+import toast from 'react-hot-toast';
+import { FaFileDownload } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({course}) => {
     // console.log(course);
+
+    const handleDownload = ()=> {
+        toast.success("You have successfully download the file.")
+    }
+
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-5">
             <figure><img className='h-60 w-full' src={course.image} alt="" /></figure>
@@ -21,9 +28,9 @@ const CourseCard = ({course}) => {
                     <Link to={`/courses/${course.course_id}`} className="card-actions">
                         <button className="btn btn-primary">Details</button>
                     </Link>
-                    <Link to={`/courses/checkout/${course.course_id}`} className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </Link>
+                    <div>
+                        <button onClick={handleDownload} className="btn btn-primary"><span className='m-2'>Download</span>  <FaFileDownload></FaFileDownload></button>
+                    </div>
                 </div>
             </div>
         </div>
