@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { FaFileDownload } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+
 const CourseCard = ({course}) => {
     // console.log(course);
 
@@ -29,12 +30,13 @@ const CourseCard = ({course}) => {
                         <button className="btn btn-primary">Details</button>
                     </Link>
                     <div>
-                        <button onClick={handleDownload} className="btn btn-primary"><span className='m-2'>Download</span>  <FaFileDownload></FaFileDownload></button>
+                    <button onClick={handleDownload} className="btn btn-primary"><span className='m-2'>Download</span>  <FaFileDownload></FaFileDownload></button>
                     </div>
                 </div>
             </div>
         </div>
     );
 };
+
 
 export default CourseCard;
